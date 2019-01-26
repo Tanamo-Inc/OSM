@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.graphhopper:graphhopper-navigation-android-ui-0.1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/graphhopper-navigation-android-ui-0.1.0-SNAPSHOT.aar/0bdd37aba3c9e7cfe859594f71f3a597/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/graphhopper-navigation-android-ui-0.1.0-SNAPSHOT.aar/0bdd37aba3c9e7cfe859594f71f3a597/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphhopper/graphhopper-navigation-android-ui/0.1.0-SNAPSHOT/6261a483279a26704a7900753be583425e1a534a/graphhopper-navigation-android-ui-0.1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">OSM</string>
+    <string name="current_night_mode" translatable="false">current_night_mode</string>
+    <string name="origin_latitude">Origin Latitude</string>
+    <string name="origin_logitude">Origin Logitude</string>
+    <string name="desti_latitude">Desti Latitude</string>
+    <string name="desti_logitude">Desti Logitude</string>
+    <string name="add">Add</string>
+    <string name="add_coordinates">Add Coordinates</string>
+</resources>
