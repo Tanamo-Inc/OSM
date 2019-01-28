@@ -2,20 +2,18 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/mm"
+    >
 
     <com.mapbox.services.android.navigation.ui.v5.NavigationView
         android:id="@+id/navigV"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/mm"
         app:navigationDarkTheme="@style/NavigationViewDark"
         app:navigationLightTheme="@style/CustomNavigationView" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ww"
         android:layout_gravity="top|start"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -27,8 +25,7 @@
 
     <TextView
         android:id="@+id/txt_speed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ww"
         android:layout_gravity="top"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"

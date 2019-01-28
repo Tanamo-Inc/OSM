@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tanamo.osm">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-sdk tools:overrideLibrary="pl.droidsonroids.gif" />
+
 
     <application
         android:name=".MyApplication"
@@ -14,7 +17,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".ui.Adder">
+        <activity android:name=".ui.Flash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,13 +25,19 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.Adder">
+
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
         <activity android:name=".ui.MainActivity">
 
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
 
         </activity>
 

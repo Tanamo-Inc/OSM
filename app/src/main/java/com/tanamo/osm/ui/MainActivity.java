@@ -37,13 +37,18 @@ import com.mapbox.services.android.navigation.ui.v5.listeners.BannerInstructions
 import com.mapbox.services.android.navigation.ui.v5.listeners.InstructionListListener;
 import com.mapbox.services.android.navigation.ui.v5.listeners.NavigationListener;
 import com.mapbox.services.android.navigation.ui.v5.listeners.SpeechAnnouncementListener;
+import com.mapbox.services.android.navigation.ui.v5.voice.NavigationSpeechPlayer;
 import com.mapbox.services.android.navigation.ui.v5.voice.SpeechAnnouncement;
+import com.mapbox.services.android.navigation.ui.v5.voice.SpeechPlayerProvider;
+import com.mapbox.services.android.navigation.v5.milestone.Milestone;
+import com.mapbox.services.android.navigation.v5.milestone.VoiceInstructionMilestone;
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 import com.mapbox.services.android.navigation.v5.routeprogress.ProgressChangeListener;
 import com.mapbox.services.android.navigation.v5.routeprogress.RouteProgress;
 import com.tanamo.osm.R;
 import com.tanamo.osm.util.SimplifiedCallback;
 
+import java.util.Locale;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -71,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationReady
 
     private boolean instructionListShown = false;
 
+    private NavigationSpeechPlayer speechPlayer;
+
     @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -89,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationReady
 
         navigV.onCreate(savedInstanceState);
         navigV.initialize(this);
+
+        initializeSpeechPlayer();
 
 
         Bundle b = getIntent().getExtras();
@@ -184,6 +193,11 @@ public class MainActivity extends AppCompatActivity implements OnNavigationReady
         if (isFinishing()) {
             saveNightModeToPreferences(AppCompatDelegate.MODE_NIGHT_AUTO);
         }
+
+        if (speechPlayer != null) {
+            speechPlayer.onDestroy();
+        }
+
     }
 
     @Override
@@ -221,7 +235,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationReady
 
     @Override
     public String willVoice(SpeechAnnouncement announcement) {
-        return String.valueOf(announcement);
+        speechPlayer.play(announcement);
+        return "";
     }
 
     @Override
@@ -381,6 +396,13 @@ public class MainActivity extends AppCompatActivity implements OnNavigationReady
                 return;
             }
         }
+    }
+
+    private void initializeSpeechPlayer() {
+        String english = Locale.US.getLanguage();
+        String accessToken = Mapbox.getAccessToken();
+        SpeechPlayerProvider speechPlayerProvider = new SpeechPlayerProvider(getApplication(), english, true, accessToken);
+        speechPlayer = new NavigationSpeechPlayer(speechPlayerProvider);
     }
 
 

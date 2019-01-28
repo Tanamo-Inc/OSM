@@ -1,120 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:background="@color/colorAccent">
+    style="@style/mm">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <RelativeLayout style="@style/mm">
 
         <LinearLayout
-            android:id="@+id/page1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:gravity="center"
+            android:id="@+id/main"
+            style="@style/mm"
+            android:layout_margin="10dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:text="@string/add_coordinates"
-                android:textAlignment="center"
-                android:textColor="#FFF"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+            android:padding="4dp">
 
             <LinearLayout
-                android:id="@+id/origin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:id="@+id/page1"
+                style="@style/mm"
+                android:background="@color/colorAccent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-                <EditText
-                    android:id="@+id/lat1"
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:drawableLeft="@drawable/ic_add_location_black_24dp"
+                    android:fontFamily="@font/comic"
+                    android:padding="5dp"
+                    android:text="@string/add_coordinates"
+                    android:textColor="#FFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    style="@style/ww"
+                    android:fontFamily="@font/helvetica"
+                    android:padding="5dp"
+                    android:text="Start :"
+                    android:textColor="#FFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/origin"
+                    style="@style/mw"
+                    android:background="@drawable/ic_ed_bg"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/lat1"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/fonta"
+                        android:hint="LAT"
+                        android:padding="8dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/logi1"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/fonta"
+                        android:hint="LONG"
+                        android:padding="8dp"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="@drawable/ic_ed_bg"
-                    android:hint="@string/origin_latitude"
-                    android:padding="8dp"
-                    android:singleLine="true" />
+                    android:fontFamily="@font/helvetica"
+                    android:padding="5dp"
+                    android:text="End :"
+                    android:textColor="#FFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/logi1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
+                <LinearLayout
+                    android:id="@+id/destination"
+                    style="@style/mw"
                     android:background="@drawable/ic_ed_bg"
-                    android:hint="@string/origin_logitude"
-                    android:padding="8dp"
-                    android:singleLine="true" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/lat2"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/fonta"
+                        android:hint="LAT"
+                        android:padding="8dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/logi2"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/fonta"
+                        android:hint="LONG"
+                        android:padding="8dp"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/next"
+                    style="@style/ww"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableLeft="@drawable/ic_add"
+                    android:fontFamily="@font/roboto"
+                    android:padding="10dp"
+                    android:text="@string/add"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/destination"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/lat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="@drawable/ic_ed_bg"
-                    android:hint="@string/desti_latitude"
-                    android:padding="8dp"
-                    android:singleLine="true" />
-
-                <EditText
-                    android:id="@+id/logi2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="@drawable/ic_ed_bg"
-                    android:hint="@string/desti_logitude"
-                    android:padding="8dp"
-                    android:singleLine="true" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="10dp"
-                android:padding="10dp"
-                android:text="@string/add"
-                android:textColor="#000"
-                android:textStyle="bold" />
 
         </LinearLayout>
 
-    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
